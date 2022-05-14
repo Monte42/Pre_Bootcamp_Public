@@ -1,0 +1,99 @@
+<html>
+<body>
+	<!-- Page Display Origin -->
+	<div id='background' style="background-image:url('img/black_bg.jpg'); height: 100vh; width: 100vw;">
+        <div id='character' style='position:absolute; top:150px; left:50vw; background-image: url("img/down1.png"); width:59px; height:86px;'></div>
+    </div>
+    
+	<script type="text/javascript">
+		
+		// VARIABLES 
+	    var leftValue = window.innerWidth/2, 
+			topValue = 150, 
+			ninja = document.getElementById("character"),
+			background = document.getElementById("background");
+
+
+		// Update Function
+    	function update(){
+    		ninja.style.left = leftValue+"px";
+    		ninja.style.top = topValue+"px";
+			if(leftValue <= 50){
+				ninjaStatus(55);
+			}
+			if(leftValue >= window.innerWidth-100){
+				ninjaStatus(window.innerWidth-100)
+			}
+			if(topValue <= 50){
+				ninjaStatus(window.innerHeight-150, window.innerHeight-150,1);
+			}
+			if(topValue>=window.innerHeight-135) {
+				ninjaStatus(50, 50,1);
+			}
+    	}
+
+
+		// Ninja Hits Page Borders
+		function ninjaStatus(ninjaPos, tpVal=50, pageCh=0){
+			// Ninja hits left and right side of page - Stops Ninja
+			if(pageCh==0){
+				ninja.style.left = ninjaPos;
+				alert("Sorry, you hit the wall.  Please, walk another direction.")
+			// Ninja hits top and bottom of page - changes background and reposition Ninja
+			} else {
+				ninja.style.top = ninjaPos;
+				topValue = tpVal;
+				pageChange()
+			}
+		}
+
+		// Changes Ninja image - direcetion change, Ninja walking
+		function updateImage(oldImage, newImage) {
+			if(ninja.style.backgroundImage != oldImage) {
+					ninja.style.backgroundImage = oldImage;
+				} else if(ninja.style.backgroundImage == oldImage) {
+					ninja.style.backgroundImage = newImage;
+				}
+		}
+
+		// Background change - when Ninja hits top and bottom of page
+		function pageChange() {
+			if(background.style.backgroundImage == 'url("img/black_bg.jpg")'){
+				background.style.backgroundImage = 'url("img/white_bg.jpg")';
+			} else if(background.style.backgroundImage == 'url("img/white_bg.jpg")'){
+				background.style.backgroundImage = 'url("img/black_bg.jpg")';
+			}
+		}
+
+
+		// Ninja respone to user input
+		function ninjaResponse(valToBeChanged, changeAmount, img1, img2){
+			if(valToBeChanged=="horizontal"){
+				updateImage(img1,img2);
+				leftValue = leftValue+changeAmount;
+			} else {
+				updateImage(img1,img2)
+				topValue+= changeAmount;
+			}
+		}
+
+
+		// User Input
+    	document.onkeydown = function(e){
+    		if(e.keyCode == 37) { // LEFT
+				ninjaResponse("horizontal",-10,'url("img/left1.png")','url("img/left2.png")');
+    		}
+    		else if (e.keyCode == 39) { // RIGHT
+				ninjaResponse("horizontal",10,'url("img/right1.png")','url("img/right2.png")'); 		
+    		}
+    		else if (e.keyCode == 40) { // DOWN
+				ninjaResponse("vertical",10,'url("img/down1.png")','url("img/down2.png")');
+    		}
+    		else if (e.keyCode == 38) { // Up
+				ninjaResponse("vertical",-10,'url("img/top1.png")','url("img/top2.png")');
+			}
+    		update();
+    	}
+    </script>
+</body>
+</html>
