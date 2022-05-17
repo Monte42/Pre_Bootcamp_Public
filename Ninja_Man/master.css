@@ -1,0 +1,110 @@
+/* GENERAL STYLE */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.row{
+    line-height: 0px;
+}
+
+.space {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-color: black;
+    background-size: contain;
+}
+
+
+
+/* STYLE BOARD */
+.wall {
+    background-color: blue;
+}
+
+.sushi{
+    background-image: url('img/sushi.png');
+}
+
+.onigiri{
+    background-image: url('img/onigiri.png');
+}
+
+
+
+/* STYLE CHARACTER */
+.character{
+    position: absolute;
+}
+#ninjaman{
+    background-image: url('img/ninja.gif');
+}
+
+#pinky{
+    background-image: url('img/pinky.gif');
+}
+
+#bluey{
+    background-image: url('img/bluey.gif');
+}
+
+#pumpky{
+    background-image: url('img/pumpky.gif');
+}
+
+#red{
+    background-image: url('img/red.gif');
+}
+
+
+
+/* STYLE PAGES */
+#preGame{
+    height: 100vh;
+    padding: 10%;
+    text-align: center;
+    background-color: rgb(8, 8, 61);
+    color: azure;
+}
+
+#preGame h1{
+    font-size: 10em;
+    color: rgb(197, 20, 20);
+    background-color: darkblue;
+    width: auto;
+    border: 5px solid black;
+    border-radius: 37%;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#gameOver{
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+    text-align: center;
+    color: white;
+    padding-top: 20%;
+}
+
+#gameOver h1{
+    font-size: 6em;
+}
+
+.butt{
+    font-size: 4em;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: springgreen;
+    margin-top: 20px;
+}
+
+#butt:hover{
+    background-color: yellowgreen;
+    transition-duration: .5s;
+}
+
+.hidden{
+    display: none;
+}

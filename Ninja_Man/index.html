@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="master.css">
+    <title>DuMond_Gary_NinjaMan</title>
+</head>
+<body>
+    <div id="preGame">
+        <h1>Ninja Man</h1>
+        <h3>By Gary DuMond</h3>
+        <button class="butt" onclick="randomWorld(), drawWorld(), startGame()">Play</button>
+    </div>
+    
+
+    <div id="world" class="hidden"></div>
+    <div class="space character hidden" id="ninjaman"></div>
+    <div class="space character hidden" id="pinky"></div>
+    <div class="space character hidden" id="bluey"></div>
+    <div class="space character hidden" id="pumpky"></div>
+    <div class="space character hidden" id="red"></div>
+    
+    <div id="gameOver" class="hidden ">
+        <h1>GAME OVER</h1><br><br>
+        <button class="butt" onclick="reloadGame()">Play Again?</button>
+
+    </div>
+
+    <script src="master.js"></script>
+
+</body>
+</html>
