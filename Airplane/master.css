@@ -1,0 +1,27 @@
+#ocean{
+    background-image: url('assets/field.jpg');
+    height: 700px;
+    width: 900px;
+}
+
+.character{
+    height:75px;
+    width:70px;
+    position: absolute;
+    background-size: cover;
+}
+
+.player{
+    background-image: url('assets/f14.png');
+}
+
+.enemy{
+    background-image: url('assets/my_enemy.png');
+}
+
+.missle{
+    height: 12px;
+    width: 3px;
+    background-color: red;
+    position: absolute;
+}
