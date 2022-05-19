@@ -19,9 +19,10 @@
     background-image: url('assets/my_enemy.png');
 }
 
-.missle{
-    height: 12px;
-    width: 3px;
-    background-color: red;
+.missile{
     position: absolute;
+    height: 40px;
+    width: 15px;
+    background-image: url('assets/missile.png');
+    background-size: cover;
 }
